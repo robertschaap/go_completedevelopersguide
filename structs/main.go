@@ -23,5 +23,14 @@ func main()  {
 		},
 	}
 
-	fmt.Printf("%+v", nested)
+	nested.updateName("jimmy")
+	nested.print()
+}
+
+func (p person) print() {
+	fmt.Printf("%+v", p)
+}
+
+func (p *person) updateName(newFirstName string) {
+	(*p).firstName = newFirstName
 }
